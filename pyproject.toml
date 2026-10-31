@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mri-image-preprocessing"
+version = "0.1.0"
+description = "A configurable preprocessing pipeline for multi-sequence MRI data."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "nibabel>=5.0",
+    "SimpleITK>=2.2",
+    "matplotlib>=3.7",
+    "openpyxl>=3.1",
+]
+
+[project.scripts]
+mri-preprocess = "preprocess.pipeline:main"
+
+[tool.setuptools]
+packages = ["preprocess"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
